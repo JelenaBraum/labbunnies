@@ -20,3 +20,20 @@ The table of registration numbers contains following attributes:
 1. bunny id (complete), varchar
 2. hashed email, varchar
 3. participation in questionaires (depends on whether I am able to use Qualtrics API to get this information)
+
+Intended structure of the API (v.1)
+
+├─ api/
+├─── config/
+├────── core.php - file used for core configuration
+├────── database.php - file used for connecting to the database.
+├─── objects/
+├────── regnumber.php - contains properties and methods for "regnumber" database queries.
+├────── reguser.php - contains properties and methods for "reguser" database queries.
+├─── reguser/
+├────── create.php - file that will accept posted user data to be saved to database.
+├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed in certain time interval.
+├─── regnumber/
+├────── create.php - file that will accept posted user data to be saved to the database.
+├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed in certain time interval.
+├────── read.php - file that will output JSON data based from "regnumbers" database records - when a user asks for their bunny ID or             finished questionnaires
