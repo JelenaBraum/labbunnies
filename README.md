@@ -14,3 +14,9 @@ Registration for volunteers willing to participate in evolutionary psychology re
 10. RhD status, int (0 neg, 1 pos, 2 unknown)
 11. e-mail checked, int (unconfirmed: 0, confirmed: timestamp)
 12. notes, text (additional info at the time of registration -> our notes at the time of download)
+
+The table of registration numbers contains following attributes:
+
+1. bunny id (complete), varchar
+2. hashed email, varchar
+3. participation in questionaires (depends on whether I am able to use Qualtrics API to get this information)
