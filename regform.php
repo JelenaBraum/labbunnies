@@ -2,28 +2,6 @@
  * Template Name: RegistrationForm
  */ ?>
 
- <?php
-
- $dtbserver 	=  "localhost"; 			// server, na kterem bezi databaze localhost
- $dtblogin	= "labbunnies";  							// logovaci jmeno pro databazi root
- $dtbheslo	=  "129241252";							// heslo pro databazi 	
- $dtb	 	= "labbunnies";						// jmeno databaze
-  
-  session_start(); 
-
-@$spojeni=MySQL_Connect($dtbserver,$dtblogin,$dtbheslo);
-if (!$spojeni):
-	echo "Nepovedlo se pripojit k databazi:".mysql_error();
-	die;
-endif;
-
- 
- 
- set_time_limit(600);
- // error_reporting(E_ALL);
- // ini_set('display_errors','1');
-?>
-
 <?php get_header();
 ?>
 <div class="wrap">
@@ -62,6 +40,7 @@ endif;
       
       <h4>Please, fill out this form.</h4>
       <p>Your registration number will be (for privacy reasons) emailed to you after you confirm your e-mail address.</p>
+      <p>Please, read our <a href="https://www.labbunnies.eu/personal-data-policy/">Personal Data Policy</a> before sending us your personal data. You can also find an explanation for why we need the particular registration info bellow the questionnaire.</p>
       
       <form method="post">
         <table>
@@ -102,7 +81,7 @@ endif;
             </td>
             <td>
               <select name="birthyear">
-                <option value="1000">-- Please, choose --</option>
+                <option value="1000">Select Year</option>
                 <?php
                   for ($i = (date('Y')-110); $i <= (date('Y')-10); $i++) {
         	          echo "<option value=\"".$i."\">".$i."</option>";
@@ -114,68 +93,44 @@ endif;
           </tr>
           <tr>
             <td>
-              <b>* Country of origin:</b>
+              <b>Place of origin:</b>
             </td>
-            <td>  
-              <select name="coo">
-                <?php
-                   $mydb = new wpdb('labbunnies','129241252','labbunnies','localhost');
-                   $rows = $mydb->get_results("select cc_fips, country_name from country order by country_name");
-                   foreach ($rows as $obj) :
-                     echo "<option value=\"".$obj->cc_fips."\">".$obj->country_name."</option>";
-                   endforeach;
-                ?>
-              </select>
+            <td> 
+             <select name="country" class="countries" id="countryId">
+               <option value="">Select Country</option>
+             </select>
+             <select name="state" class="states" id="stateId">
+               <option value="">Select State</option>
+             </select>
+             <select name="city" class="cities" id="cityId">
+               <option value="">Select City</option>
+             </select>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="//geodata.solutions/includes/countrystatecity.js"></script>
+
+            </td>
+          </tr>
+          <tr>
+            <td><b>Now living in</b></td>
+            <td>
+              <input type="radio" checked="true" name="changeofplace" value="0"> The same as the place of origin.<br>
+              <input type="radio" name="changeofplace" value="1"> I am now living in <input type="text" maxlength="80" name="ccountry" size="5" value="Country"> <input type="text" maxlength="80" name="cstate" size="5" value="State or Province"> <input type="text" maxlength="80" name="city" size="5" value="City"> <br>
+              Note: Fill in only the place that changed - if you are, for example, still in the same country and province, write down just your current city name.
             </td>
           </tr>
           <tr>
             <td>
-              <b>* ** Town of origin:</b>
+              <b>* Primary language:</b>
             </td>
-            <td>  
-              <select name="too">
-                <option value="Need to learn AJAX first...">Need to learn AJAX first...</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <b>Current country:</b>
-            </td>
-            <td>  
-              <select name="cc">
-              <?php
-                  // $mydb = new wpdb('labbunnies','129241252','labbunnies','localhost');
-                   $rows = $mydb->get_results("select cc_fips, country_name from country order by country_name");
-                   foreach ($rows as $obj) :
-                     echo "<option value=\"".$obj->cc_fips."\">".$obj->country_name."</option>";
-                   endforeach;
-                ?>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <b>** Current town:</b>
-            </td>
-            <td>  
-              <select name="ct">
-                <option value="Need to learn AJAX first...">Need to learn AJAX first...</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <b>*** Primary language:</b>
-            </td>
-            <td>  
+            <td> 
               <select name="language">
+                <option value="en">English</option>  
               <?php
-                  // $mydb = new wpdb('labbunnies','129241252','labbunnies','localhost');
+                 /*  $mydb = new wpdb('labbunnies','129241252','labbunnies','localhost');
                    $rows = $mydb->get_results("select id, value from language order by value");
                    foreach ($rows as $obj) :
                      echo "<option value=\"".$obj->id."\">".$obj->value."</option>";
-                   endforeach;
+                   endforeach;     */
                 ?>
               </select>
             </td>
@@ -232,9 +187,7 @@ endif;
         </table>
       </form>    
       <p>
-        * Please, choose the country (and town) you lived in for most of your childhood years (until adulthood).<br>
-        ** If you town isn't listed, please, choose a nearby town that is. <br>
-        *** The language you feel most comfortable speaking. 
+        * The language you feel most comfortable speaking. 
       </p>
       
 
