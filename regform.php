@@ -126,7 +126,7 @@
               <select name="language">
                 <option value="en">English</option>  
               <?php
-                 /*  $mydb = new wpdb('labbunnies','129241252','labbunnies','localhost');
+                 /*  $mydb = new wpdb('labbunnies','***','labbunnies','localhost');
                    $rows = $mydb->get_results("select id, value from language order by value");
                    foreach ($rows as $obj) :
                      echo "<option value=\"".$obj->id."\">".$obj->value."</option>";
