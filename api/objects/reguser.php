@@ -9,10 +9,11 @@ class Reguser{
     public $bunnyidnum;
     public $name;
     public $surname;
+    public $sex;
     public $email;
     public $birthyear;
-    public $country;
-    public $town;
+    public $placeoforigin;
+    public $currentplace;
     public $language;
     public $toxo;
     public $rhd;
