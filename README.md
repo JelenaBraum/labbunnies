@@ -8,8 +8,8 @@ Registration for volunteers willing to participate in evolutionary psychology re
 4. gender, int (0 female, 1 male, 2 other)
 5. e-mail, varchar
 6. year of birth, int
-7. country, varchar (iso Alpha-2 code co/cc: country of origin/current country)
-8. town, varchar (town of origin / current town)
+7. placeoforigin, varchar (country | state or province | city)
+8. currentplace, varchar (country | state or province | city)
 9. primary language, varchar
 10. toxo status, int (0 not-inf, 1 inf, 2 unknown)
 11. RhD status, int (0 neg, 1 pos, 2 unknown)
