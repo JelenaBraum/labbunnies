@@ -5,15 +5,16 @@ Registration for volunteers willing to participate in evolutionary psychology re
 1. bunny id (numerical part), int
 2. name, varchar
 3. surname, varchar
-4. e-mail, varchar
-5. year of birth, int
-6. country, varchar (iso Alpha-2 code)
-7. town, varchar (not decided yet)
-8. primary language, varchar
-9. toxo status, int (0 not-inf, 1 inf, 2 unknown)
-10. RhD status, int (0 neg, 1 pos, 2 unknown)
-11. e-mail checked, int (unconfirmed: 0, confirmed: timestamp)
-12. notes, text (additional info at the time of registration -> our notes at the time of download)
+4. gender, int (0 female, 1 male, 2 other)
+5. e-mail, varchar
+6. year of birth, int
+7. country, varchar (iso Alpha-2 code co/cc: country of origin/current country)
+8. town, varchar (town of origin / current town)
+9. primary language, varchar
+10. toxo status, int (0 not-inf, 1 inf, 2 unknown)
+11. RhD status, int (0 neg, 1 pos, 2 unknown)
+12. e-mail checked, int (unconfirmed: 0, confirmed: timestamp)
+13. notes, text (additional info at the time of registration -> our notes at the time of download)
 
 The table of registration numbers contains following attributes:
 
