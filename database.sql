@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `regusers` (
   `bunnyidnum` int(8) NOT NULL,
   `name` varchar(255) COLLATE utf8_bin NOT NULL,
   `surname` varchar(255) COLLATE utf8_bin NOT NULL,
+  `gender` int(1) NOT NULL,
   `email` varchar(255) COLLATE utf8_bin NOT NULL,
   `birthyear` int(4) NOT NULL,
   `country` varchar(5) COLLATE utf8_bin NOT NULL,
