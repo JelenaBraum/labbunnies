@@ -1,5 +1,27 @@
 # labbunnies
 
+TO-DO list:
+
+* (CHECK) draft databases
+* (CHECK) draft registration form
+* (CHECK) draft texts for homepage, data policy, registration, current projects
+* create a few "news stories"
+* (CHECK) create the API structure (config, objects, regnumbers, and regusers folders)
+* (CHECK) draft create.php and post_one.php for regnumbers and add the methods into the regnumbers.php
+* (CHECK) draft create.php for regusers and add the methods into the regusers.php
+* prepare a php script that calls the create.php with the data from registration form
+* tweak the registration form so that it sends the data in correct format
+* tweak the php script so that it transform the registration data into correct formats needed for the database
+* test creating a new registered user in the regusers database
+* tweak the scripts so that the data tranformed into correct format are saved also in the regnumbers database
+* create a script that sends a user an infomail to their email address with a confirmation link to finish their registration
+* create a script that confirms new registered user's email and sends them their bunny ID
+* create a script that deletes unconfirmed registration after a certain amount of time (5 hours?)
+* make the API safer by using authorization keys
+* create a script that sends the users their bunny ID to their email - this needs to be done using hashed emails so also the anonymous users can get their numbers
+* create a database that collects names of finished questionnaires (quests field might either contain complete names or links to another table)
+* tweak the script for sending the bunny ID so it also sends the users the questionnaires they finished
+
 Registration for volunteers willing to participate in evolutionary psychology research. The registration form is implemented into a wordpress page and connects through API to a database on a different server. There are two tables in the database, one consisting of registration numbers and (hashed) emails, the second one collects personal information of the volunteers and is regularly deleted from an internet-connected disc. Attributes of each volunteer are:
 
 1. bunny id (numerical part), int
@@ -41,6 +63,3 @@ Intended structure of the API (v.1)
 ├────── create.php - file that will accept posted user data to be saved to the database.<br>
 ├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed.<br>
 ├────── read.php - file that will output JSON data based from "regnumbers" database records - when a user asks for their bunny ID or finished questionnaires
-
-Methods
-
