@@ -17,6 +17,7 @@ TO-DO list:
 * create a script that sends a user an infomail to their email address with a confirmation link to finish their registration
 * create a script that confirms new registered user's email and sends them their bunny ID
 * create a script that deletes unconfirmed registration after a certain amount of time (5 hours?)
+* rename the facebook page Guinea Pigs tp Lab Bunnies and announce the new web page
 * make the API safer by using authorization keys
 * create a script that sends the users their bunny ID to their email - this needs to be done using hashed emails so also the anonymous users can get their numbers
 * create a database that collects names of finished questionnaires (quests field might either contain complete names or links to another table)
