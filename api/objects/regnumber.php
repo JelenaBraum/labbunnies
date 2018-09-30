@@ -64,4 +64,33 @@ function create(){
     return false;
      
 }
+ 
+function readOne(){
+ 
+    // query to read single record
+    $query = "SELECT
+                bunnyid, hemail, quests
+            FROM
+                " . $this->table_name . " 
+            WHERE
+                hemail = ?
+";
+ 
+    // prepare query statement
+    $stmt = $this->conn->prepare( $query );
+ 
+    // bind hemail of regnumber to be updated
+    $stmt->bindParam(1, $this->hemail);
+ 
+    // execute query
+    $stmt->execute();
+ 
+    // get retrieved row
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+    // set values to object properties
+    $this->bunnyid = $row['bunnyid'];
+    $this->hemail = $row['hemail'];
+    $this->quests = $row['quests'];
+}
 }
