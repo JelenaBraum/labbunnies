@@ -12,9 +12,12 @@ Registration for volunteers willing to participate in evolutionary psychology re
 8. currentplace, varchar (country | state or province | city)
 9. primary language, varchar
 10. toxo status, int (0 not-inf, 1 inf, 2 unknown)
-11. RhD status, int (0 neg, 1 pos, 2 unknown)
-12. e-mail checked, int (unconfirmed: 0, confirmed: timestamp)
-13. notes, text (additional info at the time of registration -> our notes at the time of download)
+11. AB0 blood group (NA, A, B, AB, 0, H)
+12. RhD status, int (0 neg, 1 pos, 2 unknown)
+13. e-mail checked, int (unconfirmed: 0, confirmed: timestamp)
+14. notes, text (additional info at the time of registration -> our notes at the time of download)
+
+Anonymous registration will not contain fields name & surname; e-mail will be taken but stored in hashed form only.
 
 The table of registration numbers contains following attributes:
 
