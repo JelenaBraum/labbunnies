@@ -32,4 +32,35 @@ function read(){
  
     return $stmt;
 }
+
+// create product
+function create(){
+ 
+    // query to insert record
+    $query = "INSERT INTO
+                " . $this->table_name . "
+            SET
+                bunnyid=:bunnyid, hemail=:hemail, quests=:quests";
+ 
+    // prepare query
+    $stmt = $this->conn->prepare($query);
+ 
+    // sanitize
+    $this->bunnyid=htmlspecialchars(strip_tags($this->bunnyid));
+    $this->hemail=htmlspecialchars(strip_tags($this->hemail));
+    $this->quests=htmlspecialchars(strip_tags($this->quests));
+ 
+    // bind values
+    $stmt->bindParam(":bunnyid", $this->bunnyid);
+    $stmt->bindParam(":hemail", $this->hemail);
+    $stmt->bindParam(":quests", $this->quests);
+ 
+    // execute query
+    if($stmt->execute()){
+        return true;
+    }
+ 
+    return false;
+     
+}
 }
