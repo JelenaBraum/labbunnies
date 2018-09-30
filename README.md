@@ -9,8 +9,11 @@ TO-DO list:
 * (CHECK) create the API structure (config, objects, regnumbers, and regusers folders)
 * (CHECK) draft create.php and post_one.php for regnumbers and add the methods into the regnumbers.php
 * (CHECK) draft create.php for regusers and add the methods into the regusers.php
+* (CHECK) temporary registration form (give us your email, we'll inform you when full registration is ready)
+* (CHECK) temporarily disable "cooperation" tab until it's ready
+* (CHECK) add first "news story"
 * prepare a php script that calls the create.php with the data from registration form
-* tweak the registration form so that it sends the data in correct format
+* (CHECK) tweak the registration form so that it sends the data in correct format
 * tweak the php script so that it transform the registration data into correct formats needed for the database
 * test creating a new registered user in the regusers database
 * tweak the scripts so that the data tranformed into correct format are saved also in the regnumbers database
