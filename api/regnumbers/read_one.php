@@ -17,7 +17,7 @@ $db = $database->getConnection();
 $regnumber = new Regnumbers($db);
  
 // set ID property of regnumber to be edited
-$regnumber->bunnyid = isset($_GET['bunnyid']) ? $_GET['bunnyid'] : die();
+$regnumber->hemail = isset($_GET['hemail']) ? $_GET['hemail'] : die();
  
 // read the details of regnumber to be edited
 $regnumber->readOne();
