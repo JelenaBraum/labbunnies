@@ -40,7 +40,7 @@ Registration for volunteers willing to participate in evolutionary psychology re
 10. toxo status, int (0 not-inf, 1 inf, 2 unknown)
 11. AB0 blood group (NA, A, B, AB, 0, H)
 12. RhD status, int (0 neg, 1 pos, 2 unknown)
-13. e-mail checked, int (unconfirmed: 0, confirmed: timestamp)
+13. e-mailchecked, varchar (NA | timestamp -> YES | timestamp)
 14. notes, text (additional info at the time of registration -> our notes at the time of download)
 
 Anonymous registration will not contain fields name & surname; e-mail will be taken but stored in hashed form only.
@@ -62,8 +62,9 @@ Intended structure of the API (v.1)
 ├────── reguser.php - contains properties and methods for "reguser" database queries.<br>
 ├─── reguser/<br>
 ├────── create.php - file that will accept posted user data to be saved to database.<br>
+├────── read_one.php - finds a record based on email, sends out bunnyid<br>
 ├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed.<br>
 ├─── regnumber/<br>
 ├────── create.php - file that will accept posted user data to be saved to the database.<br>
 ├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed.<br>
-├────── read.php - file that will output JSON data based from "regnumbers" database records - when a user asks for their bunny ID or finished questionnaires
+├────── read_one.php - file that will output JSON data based from "regnumbers" database records - when a user asks for their bunny ID or finished questionnaires - input is an encrypted e-mail address
