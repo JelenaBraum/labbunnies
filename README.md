@@ -18,7 +18,7 @@ TO-DO list:
 * (CHECK) test creating a new registered user in the regusers database
 * (CHECK) tweak the scripts so that the data tranformed into correct format are saved also in the regnumbers database
 * (CHECK) create a script that sends a user an infomail to their email address with a confirmation link to finish their registration
-* create a script that confirms new registered user's email and sends them their bunny ID
+* (CHECK) create a script that confirms new registered user's email and sends them their bunny ID
 * create a script that deletes unconfirmed registration after a certain amount of time (5 hours?)
 * rename the facebook page Guinea Pigs tp Lab Bunnies and announce the new web page
 * make the API safer by using authorization keys
@@ -63,8 +63,10 @@ Intended structure of the API (v.1)
 ├─── reguser/<br>
 ├────── create.php - file that will accept posted user data to be saved to database.<br>
 ├────── read_one.php - finds a record based on email, sends out bunnyid<br>
-├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed.<br>
+├────── read_email.php - finds a record based on bunnyidnum, sends out email<br>
+├────── update.php - finds a record based on bunnyidnum, marks record as confirmed<br>
+*├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed.<br>
 ├─── regnumber/<br>
 ├────── create.php - file that will accept posted user data to be saved to the database.<br>
-├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed.<br>
+*├────── delete.php - file that will accept an user ID to delete a database record if an email is not confirmed.<br>
 ├────── read_one.php - file that will output JSON data based from "regnumbers" database records - when a user asks for their bunny ID or finished questionnaires - input is an encrypted e-mail address
