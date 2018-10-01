@@ -16,7 +16,7 @@ TO-DO list:
 * (CHECK) tweak the registration form so that it sends the data in correct format
 * (CHECK) tweak the php script so that it transform the registration data into correct formats needed for the database
 * (CHECK) test creating a new registered user in the regusers database
-* tweak the scripts so that the data tranformed into correct format are saved also in the regnumbers database
+* (CHECK) tweak the scripts so that the data tranformed into correct format are saved also in the regnumbers database
 * create a script that sends a user an infomail to their email address with a confirmation link to finish their registration
 * create a script that confirms new registered user's email and sends them their bunny ID
 * create a script that deletes unconfirmed registration after a certain amount of time (5 hours?)
