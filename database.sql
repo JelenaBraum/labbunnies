@@ -24,6 +24,8 @@ CREATE TABLE IF NOT EXISTS `regnumbers` (
   `bunnyid` varchar(30) COLLATE utf8_bin NOT NULL,
   `hemail` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `quests` text COLLATE utf8_bin,
+  `nickname` varchar(255) COLLATE utf8_bin NOT NULL,
+  `heslo` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`bunnyid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
